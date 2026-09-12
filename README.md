@@ -616,37 +616,3 @@ Choose the command that describes your actual staged changes; these examples are
 ```bash
 git commit -m "feat(server): check database before startup"   -m "Exit with code 1 when PostgreSQL is unavailable and close the pool before exiting."
 ```
-
-### Commit from VS Code
-
-1. Open **Source Control** in the sidebar.
-2. Select the correct repository if VS Code lists more than one.
-3. Review each changed file, then click **+** beside the files you want to stage.
-4. Enter a message such as `docs(server): explain Git hooks and commit messages` in the commit message box.
-5. Click **Commit** and wait for the hooks to finish.
-6. If a hook fails, inspect VS Code's Git output (Command Palette → **Git: Show Git Output**), fix the problem, stage your changes, and retry.
-
-VS Code uses Git underneath, so the same installed hooks apply. Node 24 and npm 11+ must be accessible to its Git process. If commands work in a terminal but fail in VS Code, check the environment used to launch VS Code.
-
-### Push after a successful commit
-
-If a remote and upstream branch are already configured:
-
-```bash
-git push
-```
-
-For a new repository, create an empty remote repository on GitHub and copy its URL. Check existing remotes first:
-
-```bash
-git remote -v
-```
-
-If there is no `origin`, replace the placeholders and add it, then push your `main` branch:
-
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-Use your actual branch name if it differs from `main`. Do not add `origin` again when it already exists. The first push may ask you to authenticate with GitHub. Later pushes can use `git push` because `-u` records the upstream branch. The pre-push hook runs automatically before the upload.
