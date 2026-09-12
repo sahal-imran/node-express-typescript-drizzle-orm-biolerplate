@@ -1,0 +1,6 @@
+node_modules
+dist
+coverage
+src/database/migrations
+openapi.generated.json
+

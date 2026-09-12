@@ -1,0 +1,1 @@
+npx --no -- lint-staged && npm run validate:commit
