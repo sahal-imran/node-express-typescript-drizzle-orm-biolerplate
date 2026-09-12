@@ -1,5 +1,3 @@
-# Ciao Away server: beginner's guide
-
 This folder contains the backend API: the program that receives HTTP requests, validates data, applies user-management rules, and reads or writes PostgreSQL. It currently supports creating, listing, retrieving, updating, and soft-deleting users.
 
 ## Contents
